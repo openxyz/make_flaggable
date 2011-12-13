@@ -23,7 +23,7 @@ module MakeFlaggable
         raise MakeFlaggable::Exceptions::AlreadyFlaggedError.new
       end
 
-      Flagging.create(:flaggable => flaggable, :flagger => self, :flag => flag)
+      Flagging.create(:flaggable_type => flaggable.class.to_s,:flaggable_id=>flaggable.id, :flagger => self, :flag => flag)
     end
 
     # Flag the +flaggable+, but don't raise an error if the flaggable was already flagged by the +flagger+ with the +:flag+.
