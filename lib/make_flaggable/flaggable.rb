@@ -12,14 +12,6 @@ module MakeFlaggable
       end
     end
 
-    def flaggings(flag = nil)
-      if flag.nil?
-        flaggings
-      else
-        flaggings.with_flag(flag)
-      end
-    end
-
     def flagged?(flag = nil)
       if flag.nil?
         flaggings.count > 0
